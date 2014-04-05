@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Quelldateien">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Headerdateien">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Ressourcendateien">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Steam">
+      <UniqueIdentifier>{834dd55f-7a83-48d6-917f-1975ffda80bd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="IW4.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Hooking.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SteamFriends005.h">
+      <Filter>Steam</Filter>
+    </ClInclude>
+    <ClInclude Include="ISteamFriends005.h">
+      <Filter>Steam</Filter>
+    </ClInclude>
+    <ClInclude Include="SteamTypes.h">
+      <Filter>Steam</Filter>
+    </ClInclude>
+    <ClInclude Include="FriendsCommon.h">
+      <Filter>Steam</Filter>
+    </ClInclude>
+    <ClInclude Include="string_t.h">
+      <Filter>Steam</Filter>
+    </ClInclude>
+    <ClInclude Include="EAccountType.h">
+      <Filter>Steam</Filter>
+    </ClInclude>
+    <ClInclude Include="EChatMemberStateChange.h">
+      <Filter>Steam</Filter>
+    </ClInclude>
+    <ClInclude Include="ELobbyType.h">
+      <Filter>Steam</Filter>
+    </ClInclude>
+    <ClInclude Include="ENotificationPosition.h">
+      <Filter>Steam</Filter>
+    </ClInclude>
+    <ClInclude Include="EPersonalQuestion.h">
+      <Filter>Steam</Filter>
+    </ClInclude>
+    <ClInclude Include="EResult.h">
+      <Filter>Steam</Filter>
+    </ClInclude>
+    <ClInclude Include="EServerMode.h">
+      <Filter>Steam</Filter>
+    </ClInclude>
+    <ClInclude Include="EUniverse.h">
+      <Filter>Steam</Filter>
+    </ClInclude>
+    <ClInclude Include="ESteamError.h">
+      <Filter>Steam</Filter>
+    </ClInclude>
+    <ClInclude Include="ESteamNotify.h">
+      <Filter>Steam</Filter>
+    </ClInclude>
+    <ClInclude Include="CGameID.h">
+      <Filter>Steam</Filter>
+    </ClInclude>
+    <ClInclude Include="CSteamID.h">
+      <Filter>Steam</Filter>
+    </ClInclude>
+    <ClInclude Include="FriendGameInfo.h">
+      <Filter>Steam</Filter>
+    </ClInclude>
+    <ClInclude Include="SteamBase.h">
+      <Filter>Steam</Filter>
+    </ClInclude>
+    <ClInclude Include="CCallback.h">
+      <Filter>Steam</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientCommon.h">
+      <Filter>Steam</Filter>
+    </ClInclude>
+    <ClInclude Include="steam_api.h">
+      <Filter>Steam</Filter>
+    </ClInclude>
+    <ClInclude Include="SteamMatchmaking007.h">
+      <Filter>Steam</Filter>
+    </ClInclude>
+    <ClInclude Include="ISteamMatchmaking007.h">
+      <Filter>Steam</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchmakingCommon.h">
+      <Filter>Steam</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Stats.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="IW4.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Hooking.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="dllEntry.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SteamFriends005.cpp">
+      <Filter>Steam</Filter>
+    </ClCompile>
+    <ClCompile Include="SteamBase.cpp">
+      <Filter>Steam</Filter>
+    </ClCompile>
+    <ClCompile Include="SteamMatchmaking007.cpp">
+      <Filter>Steam</Filter>
+    </ClCompile>
+    <ClCompile Include="PartyBypass.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Load.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
