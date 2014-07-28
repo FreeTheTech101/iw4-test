@@ -1,6 +1,6 @@
 #pragma once
 
-#define PROTOCOL 144
+#define PROTOCOL 142
 
 typedef enum assetType_e
 {
@@ -1200,6 +1200,9 @@ extern FS_Seek_t FS_Seek;
 typedef void (__cdecl * G_LogPrintf_t)(char*, ...);
 extern G_LogPrintf_t G_LogPrintf;
 
+typedef int (*Scr_AddString_t)(char*);
+extern Scr_AddString_t Scr_AddString;
+
 
 typedef void (__cdecl * MSG_Init_t)(void* msg, void* data, int maxsize);
 extern MSG_Init_t MSG_Init;
@@ -1268,6 +1271,12 @@ extern SL_GetString_t SL_GetString;
 typedef void (__cdecl * Scr_NotifyNum_t)(int number, int type, short notify, int numArgs);
 extern Scr_NotifyNum_t Scr_NotifyNum;
 
+typedef int (__cdecl * Scr_GetNumParam_t)(void);
+extern Scr_GetNumParam_t Scr_GetNumParam;
+
+typedef char* (__cdecl * Scr_GetString_t)(int);
+extern Scr_GetString_t Scr_GetString;
+
 typedef void* (__cdecl * R_RegisterFont_t)(const char* asset);
 extern R_RegisterFont_t R_RegisterFont;
 
@@ -1303,6 +1312,10 @@ extern Script_SetupTokens_t Script_SetupTokens;
 
 typedef int (__cdecl * Script_CleanString_t)(char* buffer);
 extern Script_CleanString_t Script_CleanString;
+
+typedef int (__cdecl * SV_AddTestClient_t)();
+extern SV_AddTestClient_t SV_AddTestClient;
+
 
 typedef FS_ListFiles_t Sys_ListFiles_t;
 extern Sys_ListFiles_t Sys_ListFiles;

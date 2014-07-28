@@ -100,6 +100,13 @@ extern "C"
 
 	SL_GetString_t SL_GetString = (SL_GetString_t)0x4CDC10;
 
+	Scr_AddString_t Scr_AddString = (Scr_AddString_t)0x412310;
+	Scr_GetNumParam_t Scr_GetNumParam = (Scr_GetNumParam_t)0x4B0E90;
+	Scr_GetString_t Scr_GetString = (Scr_GetString_t)0x425900;
+	Scr_NotifyNum_t Scr_NotifyNum = (Scr_NotifyNum_t)0x48F980;
+
+	SV_AddTestClient_t SV_AddTestClient = (SV_AddTestClient_t)0x48AD30;
+
 	// 159 stuff
 	Field_Clear_t Field_Clear = (Field_Clear_t)0x437EB0;
 };

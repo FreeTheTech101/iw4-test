@@ -183,6 +183,65 @@ char* GetUsername()
 	return ingameUsername;
 }
 
+void spawnBot_f()
+{
+	int count = (Cmd_Argc() > 1 ? atoi(Cmd_Argv(1)) : 1);
+
+	std::vector<int> entRefs;
+
+	for(int i = 0; i < count; i++)
+	{
+		int entRef = SV_AddTestClient();
+
+		if(entRef)
+		{
+			entRefs.push_back(entRef);
+		}
+		else
+			break;
+	}
+
+	Cbuf_AddText(0, "wait 100;");
+
+	for(int i = 0; i < entRefs.size(); i++)
+	{
+		Cbuf_AddText(0, va("autoAssignClient %d;", *(int*)entRefs[i]));
+	}
+
+	Cbuf_AddText(0, "wait 100;");
+
+	for(int i = 0; i < entRefs.size(); i++)
+	{
+		Cbuf_AddText(0, va("autoChangeClass %d;", *(int*)entRefs[i]));
+	}
+}
+
+void autoAssignClient_f()
+{
+	if(Cmd_Argc() != 2)
+		return;
+
+	short notifyStr = SL_GetString("menuresponse", 0);
+
+	Scr_AddString("autoassign");
+	Scr_AddString("team_marinesopfor");
+
+	Scr_NotifyNum(atoi(Cmd_Argv(1)), 0, notifyStr, 2);
+}
+
+void autoChangeClass_f()
+{
+	if(Cmd_Argc() != 2)
+		return;
+
+	short notifyStr = SL_GetString("menuresponse", 0);
+
+	Scr_AddString("class1");
+	Scr_AddString("changeclass");
+	
+	Scr_NotifyNum(atoi(Cmd_Argv(1)), 0, notifyStr, 2);
+}
+
 void PatchMW2()
 {
 	// Ignore DVAR error
@@ -213,6 +272,9 @@ void PatchMW2()
 
 	// This looks dangerous to patch
 	nop(0x594260, 5);
+
+	// IDK, causes crash when starting a party
+	*(BYTE*)0x475D20 = 0xC3;
 
 	// No improper quit popup
 	*(BYTE*)0x4113BB = 0xEB;
@@ -268,6 +330,9 @@ void PatchMW2()
 	*(int*)0x4D36AE = PROTOCOL; // was 8E
 	*(int*)0x4D36B3 = PROTOCOL; // was 8E
 
+	// Open NAT
+	*(DWORD*)0x79D898 = 1;
+
 	// Test
 	ReallocateAssetPool(ASSET_TYPE_WEAPON, 2400);
 
@@ -289,7 +354,14 @@ void PatchMW2()
 	*(DWORD*)0x6D75B0 = (DWORD)SteamMatchmaking;
 	*(DWORD*)0x6D75EC = (DWORD)SteamFriends;
 	*(DWORD*)0x405309 = (DWORD)exampleName;
-	*(DWORD*)0x6D7458 = (DWORD)custom_gethostbyname;
+	//*(DWORD*)0x6D7458 = (DWORD)custom_gethostbyname;
+
+	static cmd_function_t spawnBot_cmd;
+	static cmd_function_t autoAssignClient_cmd;
+	static cmd_function_t autoChangeClass_cmd;
+	Cmd_AddCommand("spawnBot", spawnBot_f, &spawnBot_cmd, 0);
+	Cmd_AddCommand("autoAssignClient", autoAssignClient_f, &autoAssignClient_cmd, 0);
+	Cmd_AddCommand("autoChangeClass", autoChangeClass_f, &autoChangeClass_cmd, 0);
 }
 
 void Sys_Init()
